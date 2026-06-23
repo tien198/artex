@@ -1,8 +1,36 @@
 @import "tailwindcss";
 
-@theme {
+@theme inline {
   --font-abel: var(--font-abel);
   --font-afacad-flux: var(--font-afacad-flux);
   --font-aldrich: var(--font-aldrich);
   --font-geist-mono: var(--font-geist-mono);
+
+  /* Artex Theme Colors */
+  --color-bg-deep: var(--bg-deep);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-card: var(--bg-card);
+  --color-border-neon: var(--border-neon);
+  --color-border-subtle: var(--border-subtle);
+  --color-neon-blue: var(--neon-blue);
+  --color-neon-bright: var(--neon-bright);
+  --color-neon-glow: var(--neon-glow);
+  --color-text-accent: var(--text-accent);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+}
+
+:root {
+  /* Artex Custom Theme Colors */
+  --bg-deep: #03030f;
+  --bg-surface: #060b18;
+  --bg-card: #0a1128;
+  --border-neon: #0062ff;
+  --border-subtle: #1a2744;
+  --neon-blue: #0062ff;
+  --neon-bright: #00aaff;
+  --neon-glow: #4f46e5;
+  --text-accent: #00aaff;
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
 }
