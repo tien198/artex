@@ -46,6 +46,19 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Artex Theme Colors */
+  --color-bg-deep: var(--bg-deep);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-card: var(--bg-card);
+  --color-border-neon: var(--border-neon);
+  --color-border-subtle: var(--border-subtle);
+  --color-neon-blue: var(--neon-blue);
+  --color-neon-bright: var(--neon-bright);
+  --color-neon-glow: var(--neon-glow);
+  --color-text-accent: var(--text-accent);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
 }
 
 :root {
@@ -81,6 +94,19 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Artex Custom Theme Colors */
+  --bg-deep: #03030F;
+  --bg-surface: #060B18;
+  --bg-card: #0A1128;
+  --border-neon: #0062FF;
+  --border-subtle: #1A2744;
+  --neon-blue: #0062FF;
+  --neon-bright: #00AAFF;
+  --neon-glow: #4F46E5;
+  --text-accent: #00AAFF;
+  --text-primary: #FFFFFF;
+  --text-secondary: #9CA3AF;
 }
 
 .dark {
