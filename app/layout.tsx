@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
-import { Abel, Afacad_Flux, Aldrich, Geist_Mono } from "next/font/google";
+import {
+  Alumni_Sans,
+  Abel,
+  Afacad_Flux,
+  Aldrich,
+  Geist_Mono,
+} from "next/font/google";
 import "./globals.css";
 import "./custom.css";
 import { cn } from "@/lib/utils";
+
+const alumniSans = Alumni_Sans({
+  variable: "--font-alumni-sans",
+  subsets: ["latin"],
+  weight: "400",
+});
 
 const abel = Abel({
   variable: "--font-abel",
@@ -40,6 +52,7 @@ export default function RootLayout({
       className={cn(
         "h-full",
         "antialiased",
+        alumniSans.variable,
         abel.variable,
         afacadFlux.variable,
         aldrich.variable,

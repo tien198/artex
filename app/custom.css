@@ -1,6 +1,8 @@
 @import "tailwindcss";
+@plugin "tailwindcss-animate";
 
 @theme inline {
+  --font-alumni-sans: var(--font-alumni-sans);
   --font-abel: var(--font-abel);
   --font-afacad-flux: var(--font-afacad-flux);
   --font-aldrich: var(--font-aldrich);
