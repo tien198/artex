@@ -8,9 +8,10 @@ export function NeonEffect() {
     const hero = document.getElementById("hero")!;
     const canvas = document.getElementById("neon-canvas") as HTMLCanvasElement;
     const ctx = canvas.getContext("2d")!;
-    const cursorEl = document.getElementById("cursor");
+    const cursorEl = document.getElementById("cursor") as HTMLElement;
 
-    let W, H;
+    let W = 0,
+      H = 0;
     let opacity = 0;
 
     function resize() {
@@ -20,8 +21,13 @@ export function NeonEffect() {
     resize();
     window.addEventListener("resize", resize);
 
-    let mouse = { x: W / 2, y: H / 2 };
-    let target = { x: W / 2, y: H / 2 };
+    type Coordinates = {
+      x: number;
+      y: number;
+    };
+
+    const mouse: Coordinates = { x: W / 2, y: H / 2 };
+    const target: Coordinates = { x: W / 2, y: H / 2 };
 
     hero.addEventListener("mousemove", (e) => {
       const r = hero.getBoundingClientRect();
@@ -121,15 +127,11 @@ export function NeonEffect() {
       cy: Math.random(),
     }));
 
-    function lerp(a, b, t) {
+    function lerp(a: number, b: number, t: number) {
       return a + (b - a) * t;
     }
 
     function draw() {
-      ctx.globalAlpha = opacity;
-      opacity = Math.min(1, opacity + 0.05);
-      if (opacity < 1) requestAnimationFrame(draw);
-
       mouse.x = lerp(mouse.x, target.x, 0.08);
       mouse.y = lerp(mouse.y, target.y, 0.08);
 
@@ -164,7 +166,7 @@ export function NeonEffect() {
           (s.baseY * H) / (H || 600) + (my - 0.5) * H * 0.18,
           s.lag,
         );
-
+        s.alpha = opacity;
         const angleRad = (s.angle * Math.PI) / 180;
         const startX = (mx - 0.5) * W * 0.3 - W * 0.05;
         const len = s.len * W;
@@ -224,12 +226,13 @@ export function NeonEffect() {
       ctx.arc(mouse.x, mouse.y, 180, 0, Math.PI * 2);
       ctx.fill();
       ctx.restore();
-
+      ctx.globalAlpha = opacity;
+      opacity = Math.min(1, opacity + 0.01);
       requestAnimationFrame(draw);
     }
 
-    const cache = {};
-    function hexToRgb(hex) {
+    const cache: { [key: string]: string } = {};
+    function hexToRgb(hex: string) {
       if (cache[hex]) return cache[hex];
       const r = parseInt(hex.slice(1, 3), 16);
       const g = parseInt(hex.slice(3, 5), 16);
@@ -238,14 +241,15 @@ export function NeonEffect() {
       return cache[hex];
     }
 
-    setTimeout(() => draw(), 1500);
+    setTimeout(() => draw(), 1000);
+    // draw();
   });
   return (
     <>
       <div className={styles["cursor"]} id="cursor"></div>
       <canvas
         id="neon-canvas"
-        className="animate-in fade-in duration-500"
+        // className="animate-in fade-in duration-2000"
       ></canvas>
     </>
   );
