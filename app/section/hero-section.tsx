@@ -1,4 +1,6 @@
-import { NeonEffect } from "./HeroSection.Neon";
+import { TypeWriter } from "@/components/shared/type-writer";
+import { NeonEffect } from "./hero-section.neon";
+import styles from "./hero-section.module.css";
 
 export function HeroSection() {
   return (
@@ -17,7 +19,7 @@ export function HeroSection() {
         <div className="absolute top-2/3 right-1/4 w-[900px] h-[2px] bg-neon-blue/40 blur-[20px] -rotate-6 translate-x-1/4" />
       </div> */}
 
-      <div className="relative z-10 flex flex-col items-center gap-8 px-6 md:px-20 mx-auto text-center">
+      <div className="relative z-10 flex flex-col items-center gap-20 px-6 md:px-20 mx-auto text-center">
         {/* Badge */}
         <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neon-blue/10 border border-border-neon/50">
           <div className="w-1.5 h-1.5 rounded-full bg-neon-bright" />
@@ -28,21 +30,39 @@ export function HeroSection() {
 
         {/* Headlines */}
         <div className="flex flex-col gap-2 w-full">
-          <h1 className="w-full text-text-primary font-alumi-sans text-6xl md:text-[96px] tracking-[4px] md:tracking-[24px] drop-shadow-[0_0_40px_rgba(0,98,255,0.3)]">
-            KIẾN TẠO TƯƠNG LAI <br />
-            CỦA
-          </h1>
-          <h1 className="text-neon-blue font-afacad-flux font-medium text-6xl md:text-[96px] tracking-[4px] md:tracking-[24px] drop-shadow-[0_0_40px_rgba(0,98,255,0.3)]">
-            KỸ THUẬT SỐ
+          <h1 className="flex flex-col gap-6 whitespace-normal w-full text-text-primary font-alumi-sans text-6xl md:text-[72px] tracking-[4px] md:tracking-[24px] leading-4 drop-shadow-[0_0_40px_rgba(0,98,255,0.3)]">
+            <TypeWriter text="KIẾN TẠO TƯƠNG LAI" />
+
+            <span
+              className={
+                "mt-7 text-neon-blue font-afacad-flux font-medium text-6xl md:text-[96px] tracking-[4px] md:tracking-[24px] drop-shadow-[0_0_40px_rgba(0,98,255,0.3)] " +
+                styles["floor-text"] +
+                " " +
+                styles["fade-in"]
+              }
+            >
+              KỸ THUẬT SỐ
+              <div className={styles["floor-flow"]}></div>
+            </span>
           </h1>
         </div>
       </div>
 
       <div className="relative z-10 flex flex-col sm:flex-row items-center gap-6 md:gap-16 mt-16">
-        <button className="flex items-center justify-center py-2 w-96 rounded-full bg-neon-blue shadow-[0_0_32px_rgba(0,98,255,0.4)] text-white font-abel text-base tracking-[1.5px] hover:bg-neon-blue/50 hover:text-white transition-transform duration-300">
+        <button
+          className={
+            "flex items-center justify-center py-2 w-96 rounded-full bg-neon-blue shadow-[0_0_32px_rgba(0,98,255,0.4)] text-white font-abel text-base tracking-[1.5px] hover:bg-neon-blue/50 hover:text-white transition-transform duration-300 " +
+            styles["fade-in"]
+          }
+        >
           Bắt Đầu Dự Án
         </button>
-        <button className="flex items-center justify-center py-2 w-96 rounded-full bg-neon-blue/5 border border-border-neon text-neon-bright font-abel text-base tracking-[1.5px] hover:bg-neon-blue/50 hover:text-white transition-colors duration-300">
+        <button
+          className={
+            "flex items-center justify-center py-2 w-96 rounded-full bg-neon-blue/5 border border-border-neon text-neon-bright font-abel text-base tracking-[1.5px] hover:bg-neon-blue/50 hover:text-white transition-colors duration-300 " +
+            styles["fade-in"]
+          }
+        >
           Khám Phá Bản Vẽ
         </button>
       </div>

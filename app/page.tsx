@@ -1,10 +1,10 @@
-import { Nav } from "./section/Nav";
-import { HeroSection } from "./section/HeroSection";
-import { ServicesSection } from "./section/ServicesSection";
-import { StatsSection } from "./section/StatsSection";
-import { WorkSection } from "./section/WorkSection";
-import { CTASection } from "./section/CTASection";
-import { Footer } from "./section/Footer";
+import { Nav } from "./section/nav";
+import { HeroSection } from "./section/hero-section";
+import { ServicesSection } from "./section/services-section";
+import { StatsSection } from "./section/stats-section";
+import { WorkSection } from "./section/work-section";
+import { CTASection } from "./section/cta-section";
+import { Footer } from "./section/footer";
 
 export default function Home() {
   return (

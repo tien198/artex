@@ -1,0 +1,77 @@
+  :global(canvas#neon-canvas) {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+
+  .cursor {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #4DAAFF;
+    box-shadow: 0 0 8px #4DAAFF, 0 0 20px rgba(77, 170, 255, 0.6);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    transition: width 0.15s, height 0.15s;
+  }
+
+
+  .floor-text {
+    position: relative;
+
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fade-in 1s ease-in-out 1.9s forwards;
+  }
+
+  .floor-flow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -.25rem;
+    height: 48px;
+    opacity: 0;
+    /* width: 100%; */
+    height: 2.5rem;
+    margin-top: 24px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, #0062ff 0%, #003aaa 50%, transparent 100%);
+    filter: blur(8px);
+    animation: floor 3s ease-in-out 1500ms infinite;
+  }
+
+
+  @keyframes floor {
+
+    0%,
+    100% {
+      opacity: 0.1;
+      transform: scaleX(1) scaleY(1);
+    }
+
+    40% {
+      opacity: 0.55;
+      transform: scaleX(1.5) scaleY(1.5);
+    }
+
+    60% {
+      opacity: 0.38;
+      transform: scaleX(1.2) scaleY(1.2);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }

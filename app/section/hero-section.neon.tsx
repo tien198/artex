@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import styles from "./HeroSection.module.css";
+import styles from "./hero-section.module.css";
 
 export function NeonEffect() {
   useEffect(() => {
@@ -241,7 +241,7 @@ export function NeonEffect() {
       return cache[hex];
     }
 
-    setTimeout(() => draw(), 1000);
+    setTimeout(() => draw(), 1500);
     // draw();
   });
   return (
