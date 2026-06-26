@@ -9,12 +9,6 @@
   --font-geist-mono: var(--font-geist-mono);
 
   /* Artex Theme Colors */
-  /* --color-bg-deep: var(--bg-deep); */
-  /* --color-bg-surface: var(--bg-surface); */
-  /* --color-bg-card: var(--bg-card); */
-  /* --color-border-neon: var(--border-neon); */
-  /* --color-border-subtle: var(--border-subtle); */
-
   --color-deep: var(--deep);
   --color-surface: var(--surface);
   --color-card: var(--card);

@@ -10,6 +10,13 @@ export function NeonEffect() {
     const ctx = canvas.getContext("2d")!;
     const cursorEl = document.getElementById("cursor") as HTMLElement;
 
+    const isMobile =
+      /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|webOS/i.test(
+        navigator.userAgent,
+      );
+
+    const particlesTotal = isMobile ? 10 : 28;
+
     let W = 0,
       H = 0;
     let opacity = 0;
@@ -114,7 +121,7 @@ export function NeonEffect() {
       baseY: s.oy * (H || 600),
     }));
 
-    const PARTICLES = Array.from({ length: 28 }, () => ({
+    const PARTICLES = Array.from({ length: particlesTotal }, () => ({
       x: Math.random(),
       y: Math.random(),
       vx: (Math.random() - 0.5) * 0.0003,
